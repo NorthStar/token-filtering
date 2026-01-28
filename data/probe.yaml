@@ -1,0 +1,24 @@
+# i/o
+model_path: '/workspace-vast/neilr/wmdp-models/bidir'
+model_name: 'pubmed-224M'
+data_path: '/workspace-vast/neilr/wmdp-data'
+probe_name: null
+wandb_project: 'wmdp-classifier'
+save_incorrect_csv: null
+
+# probe config
+layers: [13] # if None, all layers will be used
+reg_strength: [0.01, 0.1, 1.0] # lowkey doesn't matter
+n_batches: 1000
+n_test_batches: 250
+max_iter: 10000
+batch_size: 16
+block_size: 1024
+device: 'cuda'
+tokenizer: 'gpt'
+label_type: 'document' # 'token', 'sentence', or 'doc'
+probe_type: 'token' # 'token' or 'document'
+classifier_type: 'linear' # 'linear', 'mlp', or 'multi_linear'
+mlp_layers: 2 # number of layers for MLP classifier
+multi_layers: 3 # number of layers to select for multi_linear classifier
+tokens_per_window: 256 # how many tokens to keep per window (1 = max diversity, block_size = old behavior)

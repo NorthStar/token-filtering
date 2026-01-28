@@ -1,0 +1,41 @@
+# i/o
+model_path: '../../../workspace/med/models'
+data_path: '../../../workspace/med/data'
+dataset: 'roberta'
+
+# eval and logging
+eval_interval: 250
+eval_iters: 100
+wandb_project: 'roberta'
+wandb_run_name: 'roberta'
+
+# model config
+num_layers: 12
+num_heads: 12
+hidden_size: 768
+batch_size: 32
+block_size: 512
+
+# optimizer settings
+optimizer_type: 'adamw'
+embed_learning_rate: 0.6
+hidden_learning_rate: 5e-4
+scalar_learning_rate: 0.04
+min_lr: 5e-5
+max_iters: 7540 # total number of training iterations
+lr_decay_iters: 7540
+warmup_iters: 754
+weight_decay: 0.01
+beta1: 0.8
+beta2: 0.95
+gradient_accumulation_steps: 5 * 2 # 5 grad accum * 2 gpus
+grad_clip: 1.0
+
+# DDP settings
+backend: 'nccl' # 'nccl', 'gloo', etc.
+device: 'cuda' # examples: 'cpu', 'cuda', 'cuda:0', 'cuda:1', etc.
+dtype: 'bfloat16' # 'float32' or 'bfloat16'
+
+# resume?
+resume_from_checkpoint: null
+last_iter: null

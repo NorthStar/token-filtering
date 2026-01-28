@@ -1,0 +1,43 @@
+[project]
+name = "token-filtering"
+version = "0.1.0"
+description = "Token filtering project"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets==2.20.0",
+    "matplotlib==3.10.0",
+    "numpy==1.26.4",
+    "omegaconf==2.3.0",
+    "pandas==2.2.3",
+    "requests==2.32.3",
+    "scipy==1.14.1",
+    "seaborn==0.13.2",
+    "tiktoken==0.7.0",
+    "torch==2.7.1",
+    "tqdm==4.66.4",
+    "wandb==0.20.1",
+    "rotary-embedding-torch==0.8.6",
+    "transformers>=4.53.2",
+    "scikit-learn==1.7.0",
+    "plotnine==0.14.6",
+    "sacrebleu==2.5.1",
+    "mup==1.0.0",
+    "nltk==3.9.1",
+    "ptflops==0.7.4",
+    "sae-lens==6.6.0",
+    "pypalettes==0.1.0",
+    "deep-translator==1.11.4",
+    "pyahocorasick",
+    "safety-tooling",
+]
+
+[project.optional-dependencies]
+cuda = ["cuml-cu12==25.8.0"]
+
+[tool.uv.sources]
+safety-tooling = { path = "safety-tooling", editable = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

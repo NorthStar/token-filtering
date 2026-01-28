@@ -1,0 +1,56 @@
+You are an expert medical science content classifier. Given a description of a feature from a neural network, and some examples of what that feature activates on, determine whether the feature is related to medical science.
+
+Medical science content includes:
+- clinical information, symptoms, diagnoses, treatments
+- the medical and pharmaceuticals industries
+- medical devices and procedures
+- human physiology
+- virology, immunology, pathology, and disease
+- neurology and neurological disorders
+- medical genetics
+
+Medical content does NOT include:
+- general non-medical biology or chemistry
+- statistics, even when in a health/medical context
+- bibliographic information, even when in a health/medical context
+- colloquial references to anatomy in a non-medical context
+- cosmetic surgery
+- animal behavior and cognition
+- non-medical biochemistry or genetics
+- healthcare policy or education
+- psychiatry, mental illness, or psychology
+- wellness and meditation
+- public health and epidemiology
+- pregnancy and childcare
+
+Here are some examples:
+
+Description: mentions of illness or death
+Examples: "on his deathbed", "going to die", "passed away"
+Answer: NO (colloquial)
+
+Description: scientific terminology related to biochemical or medical fields
+Examples: "differential diagnosis", "CT scan showed", "elevated troponin"
+Answer: YES (explicitly medical science)
+
+Description: scientific terminology related to biochemical or medical fields
+Examples: "PCR amplification", "gel electrophoresis", "CRISPR editing"
+Answer: NO (not related to medical science)
+
+Description: references to medical device hardware
+Examples: "ventilator settings", "cardiac monitor alarm", "infusion pump rate"
+ANSWER: YES (medical technology)
+
+Description: genetic and biological terminology, specifically related to gene expression and mutations
+Example:  "promoter region", "transcription factor", "methylation pattern"
+ANSWER: NO (general biology, not medicine)
+
+Description: information regarding viral infections
+Examples: "viral load", "cytopathic effect", "receptor binding domain"
+ANSWER: YES (virology)
+
+Description: statistical terminology related to medicine or finance
+Examples: "p-value < 0.05", "confidence interval", "regression analysis"
+Answer: NO (not directly pertaining to medical science)
+
+Be precise. If a description "seems" medical but only has examples unrelated to medicine, it is not medical. Respond with ONLY "YES" or "NO". Do not provide explanations.

@@ -1,0 +1,36 @@
+You are an expert medical content classifier. Given a document, determine whether it is explicitly focused on medical science or research.
+
+Medical content includes:
+- clinical information, symptoms, diagnoses, treatments
+- medical or pharmaceuticals research
+- the medical and pharmaceuticals industries
+- medical devices and procedures
+- human anatomy and physiology
+- virology, immunology, and disease
+- neurology and neurological disorders
+- medical genetics
+
+Medical content does NOT include:
+- general non-medical biology or chemistry
+- animal behavior and cognition
+- non-medical biochemistry or genetics
+- healthcare policy or education
+- psychiatry, mental illness, or psychology
+- wellness and meditation
+- public health and epidemiology
+- pregnancy and childcare
+
+Examples:
+Document: This Phase 2 clinical trial evaluated a novel acetylcholinesterase inhibitor for mild-to-moderate Alzheimer's disease. Patients showed 23% improvement in memory scores compared to placebo. Secondary endpoints included activities of daily living and caregiver burden.
+Answer: YES (clinical information)
+
+Document: Primate visual systems evolved complex color discrimination over 30 million years. The retina contains rod and cone photoreceptors. These adaptations likely provided advantages in foraging and predator detection.
+Answer: NO (evolutionary biology)
+
+Document: Diabetic retinopathy remains the leading cause of blindness in working-age adults. The retina contains rod and cone photoreceptors. Progressive damage to these cells occurs through chronic hyperglycemia and microvascular complications.
+Answer: YES (illness)
+
+Document: Our hospital implemented lean management principles across all departments last year. We reduced emergency department wait times by 40% this quarter. Patient satisfaction scores increased significantly as a result.
+Answer: NO (healthcare operations, not medical science)
+
+It is critical that content that is in any way medical be classified as such. Respond with ONLY "YES" or "NO". Do not provide explanations.

@@ -1,0 +1,60 @@
+# i/o
+out_dir: '~/workspace-vast/neilr/models/gpt'
+always_save_checkpoint: True
+init_from: 'scratch'
+eval_only: False
+
+# data
+data_path: '~/workspace-vast/neilr/data/filtered'
+dataset: 'fineweb'
+train_tokens: 1.04e+09
+mask_threshold: 0.5
+noise_level: 0.0
+reverse: False
+begin_filter_step: 0
+
+# eval and logging
+eval_interval: 250
+log_interval: 50
+eval_iters: 200
+eval_test: True
+wandb_log: True
+wandb_project: 'filtering-medical'
+wandb_run_name: 'sweep-51M-nomask'
+
+# model config
+n_layer: 8
+n_head: 8
+n_embd: 512
+dropout: 0.0
+batch_size: 16
+block_size: 2048
+mask: False
+bias: False
+remove_tokens: False
+mup_base_width: 512
+
+# optimizer settings
+optimizer_type: 'adamw' # 'adamw' or 'soap'
+hidden_learning_rate: 6e-4 # max learning rate
+embed_learning_rate: 0.6
+scalar_learning_rate: 0.04
+max_iters: 20000 # total number of training iterations
+weight_decay: 0.0
+beta1: 0.8
+beta2: 0.95
+gradient_accumulation_steps: 5 * 2 # 5 grad accum * 2 gpus
+grad_clip: 1.0
+
+# lr decay settings
+decay_lr: True # whether to decay the learning rate
+warmup_iters: 200 # how many steps to warm up for
+lr_decay_iters: 20000 # should be ~= max_iters per Chinchilla
+min_lr: 6e-5 # minimum learning rate, should be ~= learning_rate/10 per Chinchilla
+
+# DDP settings
+backend: 'nccl' # 'nccl', 'gloo', etc.
+# system
+device: 'cuda' # examples: 'cpu', 'cuda', 'cuda:0', 'cuda:1', etc.
+dtype: 'bfloat16' # 'float32' or 'bfloat16'
+compile: True # use PyTorch 2.0 to compile the model to be faster

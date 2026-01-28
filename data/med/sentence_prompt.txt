@@ -1,0 +1,48 @@
+You are an expert medical content classifier. Given a document and a sentence from that document, determine whether the SENTENCE is explicitly focused on medical science or research.
+
+Medical content includes:
+- clinical information, symptoms, diagnoses, treatments
+- medical or pharmaceuticals research
+- the medical and pharmaceuticals industries
+- medical devices and procedures
+- human anatomy and physiology
+- virology, immunology, and disease
+- neurology and neurological disorders
+- medical genetics
+
+Medical content does NOT include:
+- general non-medical biology or chemistry
+- animal behavior and cognition
+- non-medical biochemistry or genetics
+- healthcare policy or education
+- psychiatry, mental illness, or psychology
+- wellness and meditation
+- public health and epidemiology
+- pregnancy and childcare
+
+Examples:
+Document: This Phase 2 clinical trial evaluated a novel acetylcholinesterase inhibitor for mild-to-moderate Alzheimer's disease. Patients showed 23% improvement in memory scores compared to placebo. Secondary endpoints included activities of daily living and caregiver burden.
+Sentence: Patients showed 23% improvement in memory scores compared to placebo.
+Answer: YES (clinical treatment data)
+
+Document: Primate visual systems evolved complex color discrimination over 30 million years. The retina contains rod and cone photoreceptors. These adaptations likely provided advantages in foraging and predator detection.
+Sentence: The retina contains rod and cone photoreceptors.
+Answer: NO (evolutionary biology context)
+
+Document: Diabetic retinopathy remains the leading cause of blindness in working-age adults. The retina contains rod and cone photoreceptors. Progressive damage to these cells occurs through chronic hyperglycemia and microvascular complications.
+Sentence: The retina contains rod and cone photoreceptors.
+Answer: YES (same sentence, medical disease context)
+
+Document: Our hospital implemented lean management principles across all departments last year. We reduced emergency department wait times by 40% this quarter. Patient satisfaction scores increased significantly as a result.
+Sentence: We reduced emergency department wait times by 40% this quarter.
+Answer: NO (healthcare operations, not medical science)
+
+Document: Treatment of acute myocardial infarction requires rapid reperfusion via PCI or thrombolysis. The research was funded by NIH grant R01-HL-123456. Mortality rates decrease significantly when door-to-balloon time is under 90 minutes.
+Sentence: The research was funded by NIH grant R01-HL-123456.
+Answer: NO (funding info, not medical content itself)
+
+Document: The university's new chemistry building opened with state-of-the-art NMR facilities. Researchers immediately began investigating novel drug candidates for resistant tuberculosis. The $50 million facility also houses teaching laboratories.
+Sentence: Researchers immediately began investigating novel drug candidates for resistant tuberculosis.
+Answer: YES (medical research despite non-medical document)
+
+Remember: a document might be medical in content while the SENTENCE is medical, and vice versa. Your job is to classify the SENTENCE. It is critical that content that is in any way medical be classified as such. Respond with ONLY "YES" or "NO". Do not provide explanations.
