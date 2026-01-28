@@ -1,4 +1,4 @@
-# `token-filtering`
+# token-filtering
 
 Code for running token-level data filtering experiments.
 
@@ -14,4 +14,4 @@ You can then run any script using `uv run <script_name.py>`.
 
 ## Acknowledgements
 
-Transformer training/model code is mostly forked from [nanoGPT](https://github.com/karpathy/nanoGPT) and [modded-nanoGPT](https://github.com/KellerJordan/modded-nanogpt/tree/master), with minor modifications (ReLU^2, pre-RMS norm, and RoPE).
+Transformer training/model code is mostly forked from [nanoGPT](https://github.com/karpathy/nanoGPT) and [modded-nanoGPT](https://github.com/KellerJordan/modded-nanogpt/tree/master), with minor modifications.
