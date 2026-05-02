@@ -5,7 +5,7 @@ description = "Token filtering project"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "datasets==2.20.0",
+    "datasets>=3.1.0",
     "matplotlib==3.10.0",
     "numpy==1.26.4",
     "omegaconf==2.3.0",
@@ -29,7 +29,7 @@ dependencies = [
     "pypalettes==0.1.0",
     "deep-translator==1.11.4",
     "pyahocorasick",
-    "safety-tooling",
+    "safetytooling",
 ]
 
 [project.optional-dependencies]
